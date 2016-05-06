@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "inlineSources": true,
+        "newLine": "LF",
+        "noEmitOnError": true
+    },
+    "filesGlob": [
+        "src/**/*.ts",
+        "test/**/*.ts",
+        "typings/**/*.ts",
+        "node_modules/typescript/lib/lib.es6.d.ts"
+    ],
+    "files": [
+        "src/app.component.ts",
+        "src/environment.dev.ts",
+        "src/environment.prod.ts",
+        "src/environment.ts",
+        "src/index.ts",
+        "src/model.d.ts",
+        "src/todo-list.component.ts",
+        "src/todo.service.ts",
+        "src/user.service.ts",
+        "test/app.component.spec.ts",
+        "test/index.spec.ts",
+        "test/todo.service.spec.ts",
+        "test/user.service.spec.ts",
+        "typings/bundle.d.ts",
+        "typings/jasmine/jasmine.d.ts",
+        "typings/webpack/webpack-env.d.ts",
+        "node_modules/typescript/lib/lib.es6.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

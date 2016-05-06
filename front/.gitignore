@@ -1,0 +1,17 @@
+.DS_Store
+npm-debug.log
+
+node_modules/
+typings/
+
+public/scripts/
+public/styles/
+public/swagger-ui/
+
+src/**/*.js
+src/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+src/environment.ts
+
+angular-cli/

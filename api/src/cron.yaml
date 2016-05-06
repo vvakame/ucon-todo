@@ -1,0 +1,5 @@
+cron:
+- description: daily datastore buckup
+  url: /api/backup-datastore
+  schedule: every day 03:00
+  timezone: Asia/Tokyo

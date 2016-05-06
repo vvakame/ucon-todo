@@ -1,0 +1,6 @@
+queue:
+# for backup datastore
+- name: backup-datastore
+  rate: 50/s
+  bucket_size: 50
+  target: ah-builtin-python-bundle

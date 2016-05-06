@@ -1,0 +1,35 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  node:
+    version: 5
+  environment:
+    PATH: "$PATH:$HOME/go_appengine"
+dependencies:
+  cache_directories:
+    - "front/node_modules"
+  pre:
+    # server side
+    - curl -o $HOME/go_appengine_sdk_linux_amd64.zip https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.36.zip
+    - unzip -q -d $HOME $HOME/go_appengine_sdk_linux_amd64.zip
+  override:
+    # server side
+    - ./setup.sh:
+        pwd: api
+    # client side
+    - npm install:
+        pwd: front
+test:
+  override:
+    # server side
+    - ./test.sh:
+        pwd: api
+    # client side
+    - npm run test:
+        pwd: front
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./deploy.sh:
+          pwd: api

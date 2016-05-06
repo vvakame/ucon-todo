@@ -1,0 +1,11 @@
+.idea/
+
+bin/
+pkg/
+
+vendor/src
+
+ucon-todo-*.json
+
+src/public/
+src/app/model_*.go
