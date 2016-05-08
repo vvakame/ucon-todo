@@ -4,7 +4,7 @@ import {
     expect,
     it,
     inject
-} from "angular2/testing";
+} from "@angular/core/testing";
 
 import { AppComponent } from '../src/app.component';
 

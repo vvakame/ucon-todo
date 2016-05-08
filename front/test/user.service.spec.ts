@@ -3,11 +3,11 @@ import {
     expect,
     beforeEach,
     it,
-} from "angular2/testing";
+} from "@angular/core/testing";
 
-import {provide, Injector} from 'angular2/core';
-import {Http, HTTP_PROVIDERS, XHRBackend, Response, ResponseOptions} from 'angular2/http';
-import {MockBackend, MockConnection} from 'angular2/http/testing';
+import {provide, Injector, ReflectiveInjector} from '@angular/core';
+import {Http, HTTP_PROVIDERS, XHRBackend, Response, ResponseOptions} from '@angular/http';
+import {MockBackend, MockConnection} from '@angular/http/testing';
 
 import {UserService} from "../src/user.service";
 
@@ -19,7 +19,7 @@ describe("UserService", () => {
     let service: UserService;
 
     beforeEach(() => {
-        injector = Injector.resolveAndCreate([
+        injector = ReflectiveInjector.resolveAndCreate([
             HTTP_PROVIDERS,
             MockBackend,
             provide(XHRBackend, { useClass: MockBackend }),

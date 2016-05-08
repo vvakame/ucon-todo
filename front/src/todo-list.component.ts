@@ -1,4 +1,4 @@
-import {Component, OnInit} from "angular2/core";
+import {Component, OnInit} from "@angular/core";
 
 import {Todo} from "./model";
 import {UserService} from "./user.service";
@@ -37,7 +37,7 @@ import {TodoService} from "./todo.service";
                 <th>Check</th>
             </tr>
         </thead>
-        <tbody *ngFor="#todo of todoList">
+        <tbody *ngFor="let todo of todoList">
             <tr>
                 <td>
                     {{todo.text}}
