@@ -18,7 +18,8 @@
     "test:bundle": "webpack test/index.spec.js test/bundle.spec.js",
     "pretest": "npm run build && npm run test:bundle",
     "test": "karma start karma.conf.js",
-    "start": "live-server public"
+    "start": "live-server public",
+    "ngssr": "ngssr --templateFile ./public/index.html --componentFile ./src/app.component"
   },
   "author": "vvakame",
   "license": "MIT",
@@ -31,6 +32,8 @@
   },
   "homepage": "https://github.com/vvakame/ucon-todo#readme",
   "devDependencies": {
+    "@angular/platform-server": "^2.0.0-rc.1",
+    "angular2-universal": "^0.100.3",
     "autoprefixer": "^6.3.6",
     "dtsgenerator": "^0.6.1",
     "dtsm": "^1.0.0",
@@ -41,10 +44,12 @@
     "karma-mocha-reporter": "^2.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "live-server": "^1.0.0",
+    "ng-ssr-cli": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss": "^5.0.19",
     "postcss-cli": "^2.5.1",
     "postcss-import": "^8.0.2",
+    "preboot": "^2.0.10",
     "tsconfig-cli": "^2.0.0",
     "tslint": "^3.7.4",
     "typescript": "^1.8.10",
