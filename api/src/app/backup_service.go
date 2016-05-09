@@ -28,7 +28,7 @@ type backupService struct {
 }
 
 func (s *backupService) BackupDatastore(c context.Context) (*Noop, error) {
-	t, err := s.addBackupTask(c, "techbookfest-datastore-backup", "cron", []string{
+	t, err := s.addBackupTask(c, "ucon-todo-datastore-backup", "cron", []string{
 		"GorillaSession",
 		"TempUser",
 	})

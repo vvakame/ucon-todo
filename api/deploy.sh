@@ -12,6 +12,6 @@ set +x
 echo $GCLOUD_KEY | base64 --decode > service_account.json
 gb gae appcfg update \
   --oauth2_access_token $(gtoken --json ./service_account.json) \
-  --application=techbookfest \
+  --application=ucon-todo \
   --version=$VERSION \
   src/

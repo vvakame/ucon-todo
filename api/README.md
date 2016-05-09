@@ -1,4 +1,4 @@
-# TechBookFestWeb Server
+# ucon-todo Server
 
 ```
 $ ./setup.sh
