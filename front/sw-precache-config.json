@@ -1,0 +1,13 @@
+{
+  "root": "public/",
+  "swFile": "sw-precache.js",
+  "staticFileGlobs": [
+    "public/styles/**.css",
+    "public/**.html",
+    "public/images/**.*",
+    "public/scripts/**.js"
+  ],
+  "stripPrefix": "public/",
+  "noHandleFetch": true,
+  "verbose": true
+}

@@ -17,6 +17,10 @@ if (environment.production) {
     enableProdMode();
 }
 
+if ("serviceWorker" in navigator) {
+    (navigator as any).serviceWorker.register("/sw-precache.js");
+}
+
 bootstrap(AppComponent, [
     HTTP_PROVIDERS,
     ROUTER_PROVIDERS,

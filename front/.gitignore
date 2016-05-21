@@ -8,6 +8,7 @@ typings/
 public/scripts/
 public/styles/
 public/swagger-ui/
+public/*.js
 
 src/**/*.js
 src/**/*.js.map
