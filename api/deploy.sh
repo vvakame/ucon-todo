@@ -15,3 +15,8 @@ gb gae appcfg update \
   --application=ucon-todo \
   --version=$VERSION \
   src/
+gb gae appcfg migrate_traffic \
+  --oauth2_access_token $(gtoken --json ./service_account.json) \
+  --application=ucon-todo \
+  --version=$VERSION \
+  src/
