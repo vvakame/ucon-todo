@@ -22,6 +22,30 @@ type Todo struct {
 	UpdatedAt time.Time `datastore:",noindex"`
 }
 
+var _ datastore.PropertyLoadSaver = &Todo{}
+
+// Load entity from Datastore.
+func (todo *Todo) Load(p []datastore.Property) error {
+	if err := datastore.LoadStruct(todo, p); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Save entify for Datastore.
+func (todo *Todo) Save() ([]datastore.Property, error) {
+	if todo.CreatedAt.IsZero() {
+		todo.CreatedAt = time.Now()
+	}
+	todo.UpdatedAt = time.Now()
+
+	p, err := datastore.SaveStruct(todo)
+	if err != nil {
+		return nil, err
+	}
+	return p, nil
+}
+
 // TodoStore manages Circle CRUD operation.
 type TodoStore struct {
 }
