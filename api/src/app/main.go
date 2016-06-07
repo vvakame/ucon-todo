@@ -6,25 +6,25 @@ package app
 import (
 	"fmt"
 	"math/rand"
+	"mime"
 	"net/http"
+	"os"
+	"path/filepath"
 	"reflect"
 	"strings"
 	"time"
+
+	"github.com/favclip/ucon"
+	"github.com/favclip/ucon/swagger"
+	"golang.org/x/net/context"
+	"google.golang.org/appengine"
+	"google.golang.org/appengine/log"
 
 	// add more image format
 	_ "image/gif"
 	_ "image/jpeg"
 	// add more image format
 	_ "golang.org/x/image/bmp"
-
-	"mime"
-	"os"
-	"path/filepath"
-
-	"github.com/favclip/ucon"
-	"github.com/favclip/ucon/swagger"
-	"golang.org/x/net/context"
-	"google.golang.org/appengine/log"
 )
 
 func init() {
@@ -43,14 +43,18 @@ func init() {
 	ucon.Orthodox()
 	ucon.Middleware(UseReqRespLogger)
 
-	swPlugin := swagger.NewPlugin(&swagger.Options{
-		Object: &swagger.Object{
-			Info: &swagger.Info{
-				Title:   "ucon todo",
-				Version: "v1",
-			},
-			Schemes: []string{"http", "https"},
+	swObj := &swagger.Object{
+		Info: &swagger.Info{
+			Title:   "ucon todo",
+			Version: "v1",
 		},
+		Schemes: []string{"https"},
+	}
+	if appengine.IsDevAppServer() {
+		swObj.Schemes = []string{"http"}
+	}
+	swPlugin := swagger.NewPlugin(&swagger.Options{
+		Object: swObj,
 		DefinitionNameModifier: func(refT reflect.Type, defName string) string {
 			if strings.HasSuffix(defName, "JSON") {
 				return defName[:len(defName)-4]
