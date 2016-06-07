@@ -3,7 +3,7 @@
 cd `dirname $0`
 cp -r ../front/public src/public
 
-VERSION=$CIRCLE_BRANCH
+VERSION=`TZ=JST-9 date '+%Y-%m-%d-%H%M'`-`echo $CIRCLE_SHA1 | cut -c 1-6`
 
 go get -u github.com/k2wanko/gtoken
 
