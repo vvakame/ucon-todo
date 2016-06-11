@@ -25,6 +25,8 @@
         "src/index.ts",
         "src/model.d.ts",
         "src/todo-list.component.ts",
+        "src/todo-new.component.ts",
+        "src/todo.component.ts",
         "src/todo.service.ts",
         "src/user.service.ts",
         "test/app.component.spec.ts",

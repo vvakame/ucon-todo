@@ -6,9 +6,16 @@ import {
     inject
 } from "@angular/core/testing";
 
-import { AppComponent } from '../src/app.component';
+import {HTTP_PROVIDERS} from "@angular/http";
 
-beforeEachProviders(() => [AppComponent]);
+import {UserService} from "../src/user.service";
+import { AppComponent } from "../src/app.component";
+
+beforeEachProviders(() => [
+    ...HTTP_PROVIDERS,
+    UserService,
+    AppComponent,
+]);
 
 describe('AppComponent', () => {
     it('should create the AppComponent',
