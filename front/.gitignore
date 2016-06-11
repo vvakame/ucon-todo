@@ -12,6 +12,8 @@ public/*.js
 
 src/**/*.js
 src/**/*.js.map
+serviceworker/**/*.js
+serviceworker/**/*.js.map
 test/**/*.js
 test/**/*.js.map
 src/environment.ts

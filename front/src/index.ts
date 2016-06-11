@@ -18,7 +18,7 @@ if (environment.production) {
 }
 
 if ("serviceWorker" in navigator) {
-    (navigator as any).serviceWorker.register("/sw-precache.js");
+    navigator.serviceWorker.register("/sw.js");
 }
 
 bootstrap(AppComponent, [

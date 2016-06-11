@@ -13,6 +13,7 @@
     },
     "filesGlob": [
         "src/**/*.ts",
+        "serviceworker/**/*.ts",
         "test/**/*.ts",
         "typings/**/*.ts",
         "node_modules/typescript/lib/lib.es6.d.ts"
@@ -29,6 +30,10 @@
         "src/todo.component.ts",
         "src/todo.service.ts",
         "src/user.service.ts",
+        "serviceworker/const.generated.ts",
+        "serviceworker/index.ts",
+        "serviceworker/typings/serviceworker.d.ts",
+        "serviceworker/typings/sw-toolbox.d.ts",
         "test/app.component.spec.ts",
         "test/index.spec.ts",
         "test/todo.service.spec.ts",
@@ -36,6 +41,7 @@
         "typings/bundle.d.ts",
         "typings/jasmine/jasmine.d.ts",
         "typings/webpack/webpack-env.d.ts",
+        "typings/whatwg-fetch/whatwg-fetch.d.ts",
         "node_modules/typescript/lib/lib.es6.d.ts"
     ],
     "atom": {
