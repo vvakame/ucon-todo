@@ -31,5 +31,7 @@ deployment:
   production:
     branch: master
     commands:
+      - npm run build:prod:
+          pwd: front
       - ./deploy.sh:
           pwd: api
