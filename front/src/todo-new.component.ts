@@ -6,7 +6,6 @@ import {MD_CARD_DIRECTIVES} from "@angular2-material/card";
 import {MD_INPUT_DIRECTIVES} from "@angular2-material/input";
 
 import {Todo} from "./model";
-import {UserService} from "./user.service";
 import {TodoService} from "./todo.service";
 
 @Component({
@@ -44,7 +43,6 @@ import {TodoService} from "./todo.service";
         ...MD_CARD_DIRECTIVES,
         ...MD_INPUT_DIRECTIVES,
     ],
-    providers: [UserService, TodoService],
 })
 export class TodoNewComponent implements OnInit {
 

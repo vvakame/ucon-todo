@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 
 import {Todo} from "./model";
-import {UserService} from "./user.service";
 import {TodoService} from "./todo.service";
 
 import {TodoComponent} from "./todo.component";
@@ -33,7 +32,6 @@ import {TodoNewComponent} from "./todo-new.component";
         TodoComponent,
         TodoNewComponent,
     ],
-    providers: [UserService, TodoService],
 })
 export class TodoListComponent implements OnInit {
 

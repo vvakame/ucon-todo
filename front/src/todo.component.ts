@@ -26,7 +26,6 @@ import {TodoService} from "./todo.service";
         ...MD_CARD_DIRECTIVES,
         ...MD_BUTTON_DIRECTIVES,
     ],
-    providers: [TodoService],
 })
 export class TodoComponent {
 

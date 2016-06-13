@@ -14,6 +14,7 @@ import {MD_ICON_DIRECTIVES, MdIconRegistry} from "@angular2-material/icon";
 import {Todo} from "./model";
 
 import {UserService} from "./user.service";
+import {TodoService} from "./todo.service";
 
 import {TodoNewComponent} from "./todo-new.component";
 import {TodoListComponent} from "./todo-list.component";
@@ -85,6 +86,7 @@ import {TodoListComponent} from "./todo-list.component";
     providers: [
         MdIconRegistry,
         UserService,
+        TodoService,
     ],
 })
 export class AppComponent implements OnInit {
