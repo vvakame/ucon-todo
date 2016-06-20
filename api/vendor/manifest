@@ -41,7 +41,7 @@
 		{
 			"importpath": "github.com/golang/protobuf",
 			"repository": "https://github.com/golang/protobuf",
-			"revision": "3b06fc7a4cad73efce5fe6217ab6c33e7231ab4a",
+			"revision": "0c1f6d65b5a189c2250d10e71a5506f06f9fa0a0",
 			"branch": "master"
 		},
 		{
@@ -83,7 +83,7 @@
 		{
 			"importpath": "golang.org/x/crypto",
 			"repository": "https://go.googlesource.com/crypto",
-			"revision": "89d9e62992539701a49a19c52ebb33e84cbbe80f",
+			"revision": "f3241ce8505855877cc8a9717bd61a0f7c4ea83c",
 			"branch": "master"
 		},
 		{
@@ -95,35 +95,35 @@
 		{
 			"importpath": "golang.org/x/net/context",
 			"repository": "https://go.googlesource.com/net",
-			"revision": "154d9f9ea81208afed560f4cf27b4860c8ed1904",
+			"revision": "8bf2b39827dbadfd566c4fae7a8790d12be8b23c",
 			"branch": "master",
 			"path": "/context"
 		},
 		{
 			"importpath": "golang.org/x/net/http2",
 			"repository": "https://go.googlesource.com/net",
-			"revision": "154d9f9ea81208afed560f4cf27b4860c8ed1904",
+			"revision": "8bf2b39827dbadfd566c4fae7a8790d12be8b23c",
 			"branch": "master",
 			"path": "/http2"
 		},
 		{
 			"importpath": "golang.org/x/net/internal/timeseries",
 			"repository": "https://go.googlesource.com/net",
-			"revision": "154d9f9ea81208afed560f4cf27b4860c8ed1904",
+			"revision": "8bf2b39827dbadfd566c4fae7a8790d12be8b23c",
 			"branch": "master",
 			"path": "/internal/timeseries"
 		},
 		{
 			"importpath": "golang.org/x/net/trace",
 			"repository": "https://go.googlesource.com/net",
-			"revision": "154d9f9ea81208afed560f4cf27b4860c8ed1904",
+			"revision": "8bf2b39827dbadfd566c4fae7a8790d12be8b23c",
 			"branch": "master",
 			"path": "/trace"
 		},
 		{
 			"importpath": "golang.org/x/oauth2",
 			"repository": "https://go.googlesource.com/oauth2",
-			"revision": "71d9edd725fe4ce4c692fcb20765be558df45ad3",
+			"revision": "65a8d08c6292395d47053be10b3c5e91960def76",
 			"branch": "master"
 		},
 		{
@@ -141,13 +141,13 @@
 		{
 			"importpath": "google.golang.org/cloud",
 			"repository": "https://code.googlesource.com/gocloud",
-			"revision": "20e786f4db50de279a834da101b142620cfb2a41",
+			"revision": "581cbbbaf53b821281c5df8f4bb9fa69c2d5f49c",
 			"branch": "master"
 		},
 		{
 			"importpath": "google.golang.org/grpc",
 			"repository": "https://github.com/grpc/grpc-go",
-			"revision": "b60d3e9ed84da5710af43964e78bc44de74b72aa",
+			"revision": "e78224b060cf3215247b7be455f80ea22e469b66",
 			"branch": "master"
 		}
 	]

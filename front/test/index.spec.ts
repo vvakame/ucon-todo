@@ -9,10 +9,10 @@ require("es6-shim");
 import 'rxjs/Rx';
 import 'rxjs/add/observable/dom/ajax';
 
-import {TEST_BROWSER_STATIC_APPLICATION_PROVIDERS, TEST_BROWSER_STATIC_PLATFORM_PROVIDERS} from "@angular/platform-browser/testing";
+import {TEST_BROWSER_APPLICATION_PROVIDERS, TEST_BROWSER_PLATFORM_PROVIDERS} from "@angular/platform-browser/testing";
 import {setBaseTestProviders} from "@angular/core/testing";
 
-setBaseTestProviders(TEST_BROWSER_STATIC_APPLICATION_PROVIDERS, TEST_BROWSER_STATIC_PLATFORM_PROVIDERS);
+setBaseTestProviders(TEST_BROWSER_APPLICATION_PROVIDERS, TEST_BROWSER_PLATFORM_PROVIDERS);
 
 import "./app.component.spec";
 import "./todo.service.spec";
