@@ -8,6 +8,6 @@ if [[ ! -x `which goapp` ]]; then
 fi
 
 rm -rf src/public
-cp -r ../front/public/ src/public/
+cp -r ../front/dist/ src/public/
 
 gb gae serve src
