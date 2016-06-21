@@ -1,7 +1,8 @@
 #!/bin/sh -eux
 
 cd `dirname $0`
-cp -r ../front/dist/ src/
+rm -rf src/public/
+cp -r ../front/dist src/public/
 
 VERSION=`TZ=JST-9 date '+%Y-%m-%d-%H%M'`-`echo $CIRCLE_SHA1 | cut -c 1-6`
 
