@@ -24,6 +24,7 @@
         "src/environment.prod.ts",
         "src/environment.ts",
         "src/index.ts",
+        "src/model-generated.d.ts",
         "src/model.d.ts",
         "src/todo-list.component.ts",
         "src/todo-new.component.ts",
