@@ -26,7 +26,7 @@ type StringIDReq struct {
 
 // ReqListOptions is request that use for list query options.
 type ReqListOptions struct {
-	Limit  int    `json:"limit" endpoints:"d=10" swagger:",in=query,d=10"`
+	Limit  int    `json:"limit" swagger:",in=query,d=10"`
 	Offset int    `json:"offset" swagger:",in=query"`
 	Cursor string `json:"cursor" swagger:",in=query"`
 }

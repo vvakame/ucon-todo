@@ -111,7 +111,7 @@ func (s *todoService) List(c context.Context, req *ReqListOptions) (*TodoListRes
 		RespListOptions: *respOpts,
 	}
 
-	return resp, err
+	return resp, nil
 }
 
 func (s *todoService) Delete(c context.Context, req *IntIDInPathReq) (*TodoJSON, error) {
