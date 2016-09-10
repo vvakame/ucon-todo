@@ -1,7 +1,7 @@
 import 'rxjs/Rx'; // load the full rxjs
 
 import {Component, OnInit, ViewChild} from "@angular/core";
-import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
+import {ROUTER_DIRECTIVES} from "@angular/router";
 
 import {MD_TOOLBAR_DIRECTIVES} from "@angular2-material/toolbar";
 import {MD_BUTTON_DIRECTIVES} from "@angular2-material/button";

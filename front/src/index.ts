@@ -8,8 +8,8 @@ import 'rxjs/add/observable/dom/ajax';
 import {enableProdMode} from '@angular/core';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {HTTP_PROVIDERS} from "@angular/http";
-import {ROUTER_PROVIDERS} from "@angular/router-deprecated";
 
+import {APP_ROUTER_PROVIDER} from "./router";
 import {AppComponent} from "./app.component";
 import {environment} from "./environment";
 
@@ -23,7 +23,7 @@ if ("serviceWorker" in navigator) {
 
 bootstrap(AppComponent, [
     HTTP_PROVIDERS,
-    ROUTER_PROVIDERS,
+    APP_ROUTER_PROVIDER,
 ])
     .then(success => console.log(`Bootstrap success`))
     .catch(error => console.log(error));
