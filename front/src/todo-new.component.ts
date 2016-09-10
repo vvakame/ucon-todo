@@ -1,12 +1,7 @@
-import {Component, OnInit, Output, EventEmitter} from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
-import {MD_TOOLBAR_DIRECTIVES} from "@angular2-material/toolbar";
-import {MD_BUTTON_DIRECTIVES} from "@angular2-material/button";
-import {MD_CARD_DIRECTIVES} from "@angular2-material/card";
-import {MD_INPUT_DIRECTIVES} from "@angular2-material/input";
-
-import {Todo} from "./model";
-import {TodoService} from "./todo.service";
+import { Todo } from "./model";
+import { TodoService } from "./todo.service";
 
 @Component({
     selector: 'todo-new',
@@ -22,7 +17,7 @@ import {TodoService} from "./todo.service";
         </md-card-title>
         <md-card-content>
             <form (ngSubmit)="doSubmit()">
-                <md-input [(ngModel)]="data.text" placeholder="What plan do you have?" required>
+                <md-input [(ngModel)]="data.text" name="text" placeholder="What plan do you have?" required>
                 </md-input>
 
                 <md-card-actions align="end">
@@ -37,12 +32,6 @@ import {TodoService} from "./todo.service";
         </md-card-content>
     </md-card>
     `,
-    directives: [
-        ...MD_TOOLBAR_DIRECTIVES,
-        ...MD_BUTTON_DIRECTIVES,
-        ...MD_CARD_DIRECTIVES,
-        ...MD_INPUT_DIRECTIVES,
-    ],
 })
 export class TodoNewComponent implements OnInit {
 
@@ -64,7 +53,7 @@ export class TodoNewComponent implements OnInit {
                 this.added.emit(todo);
                 this.data = {};
             },
-            err => { }
+            _err => { }
             );
     }
 }

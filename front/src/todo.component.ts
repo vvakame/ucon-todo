@@ -1,10 +1,7 @@
-import {Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
 
-import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
-import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
-
-import {Todo} from "./model";
-import {TodoService} from "./todo.service";
+import { Todo } from "./model";
+import { TodoService } from "./todo.service";
 
 @Component({
     selector: 'todo',
@@ -22,10 +19,6 @@ import {TodoService} from "./todo.service";
             <button md-button (click)="done()">DONE</button>
         </md-card>
     `,
-    directives: [
-        ...MD_CARD_DIRECTIVES,
-        ...MD_BUTTON_DIRECTIVES,
-    ],
 })
 export class TodoComponent {
 
@@ -51,7 +44,7 @@ export class TodoComponent {
                 this.data.updatedAt = newTodo.updatedAt;
                 this.data.done = newTodo.done;
             },
-            err => { }
+            _err => { }
             );
     }
 }

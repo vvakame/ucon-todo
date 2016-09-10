@@ -1,32 +1,27 @@
-import {
-    describe,
-    expect,
-    beforeEach,
-    it,
-} from "@angular/core/testing";
+import { TestBed, getTestBed } from "@angular/core/testing";
 
-import {provide, Injector, ReflectiveInjector} from '@angular/core';
-import {Http, HTTP_PROVIDERS, XHRBackend, Response, ResponseOptions} from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
+import { Injector } from '@angular/core';
+import { Http, HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 
-import {UserService} from "../src/user.service";
+import { UserService } from "../src/user.service";
 
 describe("UserService", () => {
     let injector: Injector;
-    let mockBackend: MockBackend;
     let backend: MockBackend;
     let httpService: Http;
     let service: UserService;
 
     beforeEach(() => {
-        injector = ReflectiveInjector.resolveAndCreate([
-            HTTP_PROVIDERS,
-            MockBackend,
-            provide(XHRBackend, { useClass: MockBackend }),
-            UserService
-        ]);
+        TestBed.configureTestingModule({
+            imports: [HttpModule],
+            providers: [
+                { provide: XHRBackend, useClass: MockBackend },
+                UserService,
+            ]
+        });
+        injector = getTestBed();
 
-        mockBackend = injector.get(MockBackend);
         backend = injector.get(XHRBackend);
         httpService = injector.get(Http);
         service = injector.get(UserService);

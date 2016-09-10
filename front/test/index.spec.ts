@@ -1,18 +1,28 @@
 import "reflect-metadata";
 
-require("zone.js/dist/zone"); // import "zone.js";
+import "zone.js/dist/zone"; // import "zone.js";
+import 'zone.js/dist/long-stack-trace-zone';
+import 'zone.js/dist/async-test';
+import 'zone.js/dist/fake-async-test';
+import 'zone.js/dist/sync-test';
+import 'zone.js/dist/proxy';
+import 'zone.js/dist/jasmine-patch';
 
 // for PhantomJS
-require("es6-shim");
+import "es6-shim";
 (window as any).Symbol = (window as any).Symbol || {};
 
 import 'rxjs/Rx';
 import 'rxjs/add/observable/dom/ajax';
 
-import {TEST_BROWSER_APPLICATION_PROVIDERS, TEST_BROWSER_PLATFORM_PROVIDERS} from "@angular/platform-browser/testing";
-import {setBaseTestProviders} from "@angular/core/testing";
+import { TestBed } from '@angular/core/testing';
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
-setBaseTestProviders(TEST_BROWSER_APPLICATION_PROVIDERS, TEST_BROWSER_PLATFORM_PROVIDERS);
+TestBed.initTestEnvironment(
+    BrowserDynamicTestingModule,
+    platformBrowserDynamicTesting(),
+);
 
 import "./app.component.spec";
 import "./todo.service.spec";
+import "./user.service.spec";

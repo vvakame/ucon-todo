@@ -1,9 +1,9 @@
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 import { Injectable } from "@angular/core";
-import {Http, Response} from "@angular/http";
+import { Http, Response } from "@angular/http";
 
-import {UserWelcomeResponse} from "./model";
+import { UserWelcomeResponse } from "./model";
 
 @Injectable()
 export class UserService {
