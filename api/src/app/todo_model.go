@@ -16,10 +16,10 @@ import (
 type Todo struct {
 	ParentKey *datastore.Key `json:"-" datastore:"-" goon:"parent"` // UserID
 	ID        int64          `datastore:"-" goon:"id"`
-	Text      string
-	Done      bool
-	CreatedAt time.Time `datastore:",noindex"`
-	UpdatedAt time.Time `datastore:",noindex"`
+	Text      string         `swagger:",req"`
+	Done      bool           ``
+	CreatedAt time.Time      `datastore:",noindex"`
+	UpdatedAt time.Time      `datastore:",noindex"`
 }
 
 var _ datastore.PropertyLoadSaver = &Todo{}

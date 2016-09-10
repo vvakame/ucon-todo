@@ -23,7 +23,7 @@ declare module "sw-toolbox/lib/strategies" {
 }
 
 declare module "sw-toolbox/lib/route" {
-    import {Strategy} from "sw-toolbox/lib/strategies";
+    import { Strategy } from "sw-toolbox/lib/strategies";
 
     class Route {
         keys: { name: string; }[];
@@ -41,7 +41,7 @@ declare module "sw-toolbox/lib/route" {
 }
 
 declare module "sw-toolbox/lib/router" {
-    import {Strategy} from "sw-toolbox/lib/strategies";
+    import { Strategy } from "sw-toolbox/lib/strategies";
     import * as Route from "sw-toolbox/lib/route";
 
     class Router {

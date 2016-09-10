@@ -1,10 +1,7 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
-import {Todo} from "./model";
-import {TodoService} from "./todo.service";
-
-import {TodoComponent} from "./todo.component";
-import {TodoNewComponent} from "./todo-new.component";
+import { Todo } from "./model";
+import { TodoService } from "./todo.service";
 
 @Component({
     selector: 'todo-list',
@@ -28,10 +25,6 @@ import {TodoNewComponent} from "./todo-new.component";
         </todo>
     </div>
     `,
-    directives: [
-        TodoComponent,
-        TodoNewComponent,
-    ],
 })
 export class TodoListComponent implements OnInit {
 
@@ -49,8 +42,8 @@ export class TodoListComponent implements OnInit {
 
     fetchTodoList() {
         this.todoService.list({ limit: 10, cursor: this.todoCursor }).subscribe(resp => {
-            this.todoCursor = resp.cursor;
-            this.todoList = resp.list;
+            this.todoCursor = resp.cursor || "";
+            this.todoList = resp.list || [];
 
             if (this.todoCursor) {
                 this.fetchTodoList();

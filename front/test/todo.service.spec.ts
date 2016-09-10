@@ -1,32 +1,27 @@
-import {
-    describe,
-    expect,
-    beforeEach,
-    it,
-} from "@angular/core/testing";
+import { TestBed, getTestBed } from "@angular/core/testing";
 
-import {provide, Injector, ReflectiveInjector} from '@angular/core';
-import {Http, HTTP_PROVIDERS, XHRBackend, Response, ResponseOptions} from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
+import { Injector } from '@angular/core';
+import { Http, HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 
-import {TodoService} from "../src/todo.service";
+import { TodoService } from "../src/todo.service";
 
 describe("TodoService", () => {
     let injector: Injector;
-    let mockBackend: MockBackend;
     let backend: MockBackend;
     let httpService: Http;
     let service: TodoService;
 
     beforeEach(() => {
-        injector = ReflectiveInjector.resolveAndCreate([
-            HTTP_PROVIDERS,
-            MockBackend,
-            provide(XHRBackend, { useClass: MockBackend }),
-            TodoService
-        ]);
+        TestBed.configureTestingModule({
+            imports: [HttpModule],
+            providers: [
+                { provide: XHRBackend, useClass: MockBackend },
+                TodoService,
+            ]
+        });
+        injector = getTestBed();
 
-        mockBackend = injector.get(MockBackend);
         backend = injector.get(XHRBackend);
         httpService = injector.get(Http);
         service = injector.get(TodoService);

@@ -14,10 +14,10 @@ toolbox.router.get(/^https:\/\/fonts.gstatic.com\//, toolbox.cacheFirst); // ref
 
 toolbox.router.any(/^\/api\/.*/, toolbox.networkFirst);
 
-self.addEventListener("install", e => {
+self.addEventListener("install", _e => {
     console.log("[ServiceWorker] Install");
 });
 
-self.addEventListener("activate", e => {
+self.addEventListener("activate", _e => {
     console.log("[ServiceWorker] Activate");
 });

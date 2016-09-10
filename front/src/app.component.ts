@@ -1,23 +1,16 @@
 import 'rxjs/Rx'; // load the full rxjs
 
-import {Component, OnInit, ViewChild} from "@angular/core";
-import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
-import {MD_TOOLBAR_DIRECTIVES} from "@angular2-material/toolbar";
-import {MD_BUTTON_DIRECTIVES} from "@angular2-material/button";
-import {MD_SIDENAV_DIRECTIVES, MdSidenav} from "@angular2-material/sidenav";
-import {MD_LIST_DIRECTIVES} from "@angular2-material/list";
-import {MD_CARD_DIRECTIVES} from "@angular2-material/card";
-import {MD_INPUT_DIRECTIVES} from "@angular2-material/input";
-import {MD_ICON_DIRECTIVES, MdIconRegistry} from "@angular2-material/icon";
+import { MdSidenav } from "@angular2-material/sidenav";
+import { MdIconRegistry } from "@angular2-material/icon";
 
-import {Todo} from "./model";
+import { Todo } from "./model";
 
-import {UserService} from "./user.service";
-import {TodoService} from "./todo.service";
+import { UserService } from "./user.service";
+import { TodoService } from "./todo.service";
 
-import {TodoNewComponent} from "./todo-new.component";
-import {TodoListComponent} from "./todo-list.component";
+import { TodoListComponent } from "./todo-list.component";
 
 @Component({
     selector: "ucon-todo",
@@ -71,18 +64,6 @@ import {TodoListComponent} from "./todo-list.component";
             </div>
         </md-sidenav-layout>
     `,
-    directives: [
-        ...ROUTER_DIRECTIVES,
-        ...MD_TOOLBAR_DIRECTIVES,
-        ...MD_BUTTON_DIRECTIVES,
-        ...MD_SIDENAV_DIRECTIVES,
-        ...MD_LIST_DIRECTIVES,
-        ...MD_CARD_DIRECTIVES,
-        ...MD_INPUT_DIRECTIVES,
-        ...MD_ICON_DIRECTIVES,
-        TodoNewComponent,
-        TodoListComponent,
-    ],
     providers: [
         MdIconRegistry,
         UserService,
@@ -105,9 +86,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.userService.welcome().subscribe(resp => {
-            this.loggedIn = resp.loggedIn;
-            this.loginURL = resp.loginURL;
-            this.logoutURL = resp.logoutURL;
+            this.loggedIn = !!resp.loggedIn;
+            this.loginURL = resp.loginURL!;
+            this.logoutURL = resp.logoutURL!;
 
             if (!resp.loggedIn) {
                 this.sidenavView.open();
