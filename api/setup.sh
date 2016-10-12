@@ -13,6 +13,6 @@ go get -u github.com/favclip/jwg/cmd/jwg
 go get -u github.com/favclip/qbg/cmd/qbg
 
 go get -u github.com/constabulary/gb/...
-go get -u code.palmstonegames.com/gb-gae
+go get -u github.com/PalmStoneGames/gb-gae
 
 gb vendor restore
