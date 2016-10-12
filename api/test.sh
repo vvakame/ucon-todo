@@ -9,6 +9,6 @@ cd ./src/
 goimports -w .
 gb generate app
 go tool vet .
-golint ./...
+[ -f "$(which golint)" ] && golint ./...
 
 gb gae test ./... $@
