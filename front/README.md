@@ -1,8 +1,8 @@
 # ucon-todo Front
 
 ```
-$ ./setup.sh
-$ ./test.sh
+$ npm install
+$ npm test
 ```
 
 ## Generate d.ts file from swagger.json
