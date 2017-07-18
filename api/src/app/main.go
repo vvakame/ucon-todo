@@ -4,6 +4,7 @@
 package app
 
 import (
+	"context"
 	"fmt"
 	"math/rand"
 	"mime"
@@ -16,7 +17,6 @@ import (
 
 	"github.com/favclip/ucon"
 	"github.com/favclip/ucon/swagger"
-	"golang.org/x/net/context"
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/log"
 

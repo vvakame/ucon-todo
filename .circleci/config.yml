@@ -1,0 +1,60 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: vvakame/circleci-gaego
+        environment:
+          TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+          DISPLAY: ":99"
+          CHROME_BIN: "/usr/bin/google-chrome"
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - npm-cache-front-{{ checksum "front/package-lock.json" }}
+
+      # setup
+      - run: gcloud --quiet components update --version 162.0.0
+      - run: rm -rf /work/go_appengine
+      - run: curl -o /work/go_appengine_sdk_linux_amd64.zip https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.55.zip
+      - run: unzip -q -d /work /work/go_appengine_sdk_linux_amd64.zip
+
+      # dependencies
+      - run:
+          name: install api dependencies
+          command: ./setup.sh
+          working_directory: ./api
+      - run:
+          name: install front dependencies
+          command: npm install --no-save
+          working_directory: ./front
+      - save_cache:
+          key: npm-cache-front-{{ checksum "front/package-lock.json" }}
+          paths:
+            - ./front/node_modules
+
+      # test
+      - run:
+          name: running api test
+          command: ./test.sh
+          working_directory: ./api
+      - run:
+          name: running front test
+          command: xvfb-run npm test
+          working_directory: ./front
+
+      - deploy:
+          name: Deploy to GAE
+          command: |
+            case "${CIRCLE_BRANCH}" in
+              "master" )
+                cd ./front && npm run build:prod
+                cd ./api && ./deploy.sh ;;
+            esac
+
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
