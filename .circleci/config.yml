@@ -15,7 +15,7 @@ jobs:
             - npm-cache-front-{{ checksum "front/package-lock.json" }}
 
       # setup
-      - run: gcloud --quiet components update --version 162.0.0
+      - run: gcloud --quiet components update --version 162.0.1
       - run: rm -rf /work/go_appengine
       - run: curl -o /work/go_appengine_sdk_linux_amd64.zip https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.55.zip
       - run: unzip -q -d /work /work/go_appengine_sdk_linux_amd64.zip
