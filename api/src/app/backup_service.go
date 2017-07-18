@@ -1,13 +1,13 @@
 package app
 
 import (
+	"context"
 	"fmt"
 	"net/url"
 	"strings"
 
 	"github.com/favclip/ucon"
 	"github.com/favclip/ucon/swagger"
-	"golang.org/x/net/context"
 	"google.golang.org/appengine/datastore"
 	"google.golang.org/appengine/log"
 	"google.golang.org/appengine/taskqueue"

@@ -1,9 +1,10 @@
 package app
 
 import (
+	"context"
+
 	"github.com/favclip/ucon"
 	"github.com/favclip/ucon/swagger"
-	"golang.org/x/net/context"
 	"google.golang.org/appengine/user"
 )
 

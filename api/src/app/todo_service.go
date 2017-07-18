@@ -1,10 +1,11 @@
 package app
 
 import (
+	"context"
+
 	"github.com/favclip/ucon"
 	"github.com/favclip/ucon/swagger"
 	"github.com/mjibson/goon"
-	"golang.org/x/net/context"
 	"google.golang.org/appengine/log"
 	"google.golang.org/appengine/user"
 )
