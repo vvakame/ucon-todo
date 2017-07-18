@@ -49,8 +49,8 @@ jobs:
           command: |
             case "${CIRCLE_BRANCH}" in
               "master" )
-                cd ./front && npm run build:prod
-                cd ./api && ./deploy.sh ;;
+                (cd ./front && npm run build:prod)
+                (cd ./api && ./deploy.sh) ;;
             esac
 
 workflows:
