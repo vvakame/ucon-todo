@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-go get -u golang.org/x/tools/cmd/goimports
+# go get -u golang.org/x/tools/cmd/goimports
 # go get -u golang.org/x/tools/cmd/vet
 
 set +e # ubuntu uses too old go version...
