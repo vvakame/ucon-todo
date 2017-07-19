@@ -12,7 +12,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - npm-cache-front2-{{ checksum "front2/package-lock.json" }}
+            - npm-cache-front-{{ checksum "front/package-lock.json" }}
 
       # setup
       - run: gcloud --quiet components update --version 162.0.1
@@ -28,11 +28,11 @@ jobs:
       - run:
           name: install front dependencies
           command: npm install --no-save
-          working_directory: ./front2
+          working_directory: ./front
       - save_cache:
-          key: npm-cache-front2-{{ checksum "front2/package-lock.json" }}
+          key: npm-cache-front-{{ checksum "front/package-lock.json" }}
           paths:
-            - ./front2/node_modules
+            - ./front/node_modules
 
       # test
       - run:
@@ -45,14 +45,14 @@ jobs:
             npm run build:prod
             npm run swagger-ui
             xvfb-run npm run test
-          working_directory: ./front2
+          working_directory: ./front
 
       - deploy:
           name: Deploy to GAE
           command: |
             case "${CIRCLE_BRANCH}" in
               "master" )
-                (cd ./front2 && npm run build:prod)
+                (cd ./front && npm run build:prod)
                 (cd ./api && ./deploy.sh) ;;
             esac
 
