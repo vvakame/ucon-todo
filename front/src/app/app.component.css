@@ -1,0 +1,9 @@
+[md-fab] {
+    position: absolute;
+    right: 3%;
+    top: 34px;
+    z-index: 1;
+}
+.add-fab[disabled][disabled][md-fab] {
+    background-color: rgba(220, 220, 220, 1);
+}

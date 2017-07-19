@@ -41,7 +41,10 @@ jobs:
           working_directory: ./api
       - run:
           name: running front test
-          command: xvfb-run npm test
+          command: |
+            npm run build:prod
+            npm run swagger-ui
+            xvfb-run npm run test
           working_directory: ./front
 
       - deploy:

@@ -1,0 +1,18 @@
+<md-card>
+    <md-card-title>
+        Add your TODO
+    </md-card-title>
+    <md-card-content>
+        <form (ngSubmit)="doSubmit()">
+            <md-input-container style="width: 100%" floatPlaceholder="never">
+                <input mdInput [(ngModel)]="data.text" name="text" placeholder="What plan do you have?" required>
+            </md-input-container>
+
+            <md-card-actions align="end">
+                <button md-raised-button color="accent" type="submit" [disabled]="!data.text">
+                        Submit
+                    </button>
+            </md-card-actions>
+        </form>
+    </md-card-content>
+</md-card>
