@@ -1,0 +1,35 @@
+<md-sidenav-container fullscreen>
+    <md-sidenav #sidenav>
+        <md-nav-list>
+            <a md-list-item *ngIf="!loggedIn && loginURL" href="{{loginURL}}">
+                <md-icon md-list-icon fontSet="fa" fontIcon="fa-sign-in"></md-icon>
+                <span md-line>Login</span>
+            </a>
+            <a md-list-item *ngIf="loggedIn && logoutURL" href="{{logoutURL}}">
+                <md-icon md-list-icon fontSet="fa" fontIcon="fa-sign-out"></md-icon>
+                <span md-line>Logout</span>
+            </a>
+            <a md-list-item href="https://github.com/vvakame/ucon-todo">
+                <md-icon md-list-icon fontSet="fa" fontIcon="fa-github-alt"></md-icon>
+                <span md-line>GitHub</span>
+            </a>
+        </md-nav-list>
+    </md-sidenav>
+
+    <md-toolbar color="primary">
+        <button md-icon-button (click)="sidenav.open()">
+                    <md-icon>menu</md-icon>
+                </button> Ucon TODO
+        <button md-fab class="add-fab" [disabled]="!loggedIn" (click)="formShowing = !formShowing">
+                    <md-icon>add</md-icon>
+                </button>
+    </md-toolbar>
+
+    <div *ngIf="formShowing">
+        <app-todo-new (added)="add($event)"></app-todo-new>
+    </div>
+
+    <div *ngIf="!formShowing && loggedIn">
+        <app-todo-list #todoList></app-todo-list>
+    </div>
+</md-sidenav-container>

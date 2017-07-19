@@ -1,0 +1,11 @@
+<md-card>
+    <md-card-title-group>
+        <md-card-title>
+            <span *ngIf="data?.done">✅</span> {{data?.text}}
+        </md-card-title>
+        <md-card-subtitle>{{data?.createdAt}}</md-card-subtitle>
+    </md-card-title-group>
+
+    <button md-button (click)="notYet()">NOT YET</button>
+    <button md-button (click)="done()">DONE</button>
+</md-card>
