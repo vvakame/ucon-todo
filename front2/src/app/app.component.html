@@ -1,11 +1,11 @@
 <md-sidenav-container fullscreen>
     <md-sidenav #sidenav>
         <md-nav-list>
-            <a md-list-item *ngIf="!loggedIn && loginURL" href="{{loginURL}}">
+            <a md-list-item *ngIf="!loggedIn && !!loginURL" href="{{loginURL}}">
                 <md-icon md-list-icon fontSet="fa" fontIcon="fa-sign-in"></md-icon>
                 <span md-line>Login</span>
             </a>
-            <a md-list-item *ngIf="loggedIn && logoutURL" href="{{logoutURL}}">
+            <a md-list-item *ngIf="loggedIn && !!logoutURL" href="{{logoutURL}}">
                 <md-icon md-list-icon fontSet="fa" fontIcon="fa-sign-out"></md-icon>
                 <span md-line>Logout</span>
             </a>

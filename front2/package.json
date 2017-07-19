@@ -11,8 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "fmt": "tsfmt -r",
-    "copy:swagger-ui": "cp -r node_modules/swagger-ui/dist/ ./dist/swagger-ui/ && cp ./swagger-ui-index.html ./dist/swagger-ui/index.html",
-    "copy:resource": "cp -r ./public/index.html ./dist",
+    "swagger-ui": "cp -r node_modules/swagger-ui/dist/ ./dist/swagger-ui/ && cp ./swagger-ui-index.html ./dist/swagger-ui/index.html",
     "gen:model": "curl http://localhost:8080/api/swagger.json | sw2dts --stdin -o src/model-generated.ts"
   },
   "private": true,
