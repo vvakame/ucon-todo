@@ -1,11 +1,14 @@
 .idea/
 
-bin/
-pkg/
+build-cmd/
 
-vendor/src
+vendor/
 
 ucon-todo-*.json
+service_account.json
 
-src/public/
-src/app/model_*.go
+public/
+app/model_*.go
+
+.envrc
+coverage.txt

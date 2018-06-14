@@ -1,18 +1,17 @@
 #!/bin/sh -eux
 
-cd `dirname $0`
+# install or fetch dependencies
+# gcloud components install --quiet app-engine-go
+go get -u github.com/golang/dep/cmd/dep
+dep ensure
 
-go get -u golang.org/x/tools/cmd/goimports
-# go get -u golang.org/x/tools/cmd/vet
-
-set +e # ubuntu uses too old go version...
-go get -u github.com/golang/lint/golint
-set -e
-
-go get -u github.com/favclip/jwg/cmd/jwg
-go get -u github.com/favclip/qbg/cmd/qbg
-
-go get -u github.com/constabulary/gb/...
-go get -u github.com/PalmStoneGames/gb-gae
-
-gb vendor restore
+# build tools
+rm -rf build-cmd/
+mkdir build-cmd
+go build -o build-cmd/goimports   ./vendor/golang.org/x/tools/cmd/goimports
+go build -o build-cmd/golint      ./vendor/golang.org/x/lint/golint
+go build -o build-cmd/gosimple    ./vendor/honnef.co/go/tools/cmd/gosimple
+go build -o build-cmd/staticcheck ./vendor/honnef.co/go/tools/cmd/staticcheck
+go build -o build-cmd/unused      ./vendor/honnef.co/go/tools/cmd/unused
+go build -o build-cmd/jwg         ./vendor/github.com/favclip/jwg/cmd/jwg
+go build -o build-cmd/qbg         ./vendor/github.com/favclip/qbg/cmd/qbg

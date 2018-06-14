@@ -1,0 +1,22 @@
+runtime: go
+api_version: go1.9
+
+inbound_services:
+- warmup
+
+handlers:
+- url: /.*
+  script: _go_app
+
+nobuild_files:
+- vendor
+- node_modules
+
+skip_files:
+- build-cmd
+- node_modules
+- vendor
+- ^.*\.sh$
+- ^.*\.toml$
+- ^.*\.lock$
+- ^.*\.yaml$
